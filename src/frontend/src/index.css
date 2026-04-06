@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+
+    /* === SKIN BLOG DESIGN TOKENS === */
+
+    /* Page background warm paper: #F3EEE4 → oklch(~0.949 0.018 82) */
+    --background: 0.949 0.018 82;
+
+    /* Primary text near-black: #1F1F1F → oklch(~0.18 0 0) */
+    --foreground: 0.18 0 0;
+
+    /* Card background warm white: #FBF7F0 → oklch(~0.975 0.010 82) */
+    --card: 0.975 0.01 82;
+    --card-foreground: 0.18 0 0;
+
+    --popover: 0.975 0.01 82;
+    --popover-foreground: 0.18 0 0;
+
+    /* Header bg warm beige: #F5EFE6 → oklch(~0.957 0.016 82) */
+    --header-bg: 0.957 0.016 82;
+
+    /* Top strip + footer deep botanical green: #2F3F35 → oklch(~0.31 0.048 150) */
+    --forest: 0.31 0.048 150;
+
+    /* Primary dark green: #35483D → oklch(~0.34 0.045 150) */
+    --primary: 0.34 0.045 150;
+    --primary-foreground: 0.975 0.01 82;
+
+    /* Secondary warm beige */
+    --secondary: 0.935 0.014 80;
+    --secondary-foreground: 0.18 0 0;
+
+    /* Muted text: #6B6257 → oklch(~0.47 0.018 60) */
+    --muted: 0.935 0.014 80;
+    --muted-foreground: 0.47 0.018 60;
+
+    /* Accent green tint */
+    --accent: 0.91 0.022 145;
+    --accent-foreground: 0.31 0.048 150;
+
+    /* Button bg: #EFE7DB → oklch(~0.929 0.022 80) */
+    --button-warm: 0.929 0.022 80;
+    --button-warm-fg: 0.18 0 0;
+
+    /* Borders/dividers: #D8D1C7 → oklch(~0.845 0.013 75) */
+    --border: 0.845 0.013 75;
+    --input: 0.845 0.013 75;
+    --ring: 0.34 0.045 150;
+
+    /* Destructive */
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+
+    /* Charts */
+    --chart-1: 0.34 0.045 150;
+    --chart-2: 0.47 0.06 145;
+    --chart-3: 0.65 0.045 140;
+    --chart-4: 0.646 0.12 55;
+    --chart-5: 0.76 0.09 85;
+
+    /* Sidebar */
+    --sidebar: 0.949 0.018 82;
+    --sidebar-foreground: 0.18 0 0;
+    --sidebar-primary: 0.34 0.045 150;
+    --sidebar-primary-foreground: 0.975 0.01 82;
+    --sidebar-accent: 0.935 0.014 80;
+    --sidebar-accent-foreground: 0.18 0 0;
+    --sidebar-border: 0.845 0.013 75;
+    --sidebar-ring: 0.34 0.045 150;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "General Sans", "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: "Playfair Display", Georgia, serif;
+  }
+
+  .text-forest {
+    color: oklch(var(--forest));
+  }
+
+  .bg-forest {
+    background-color: oklch(var(--forest));
+  }
+
+  .bg-header {
+    background-color: oklch(var(--header-bg));
+  }
+
+  .bg-button-warm {
+    background-color: oklch(var(--button-warm));
+    color: oklch(var(--button-warm-fg));
+  }
+
+  .nav-link {
+    @apply text-xs font-medium tracking-widest uppercase no-underline transition-colors duration-200;
+    color: oklch(var(--foreground));
+    letter-spacing: 0.1em;
+  }
+
+  .nav-link:hover,
+  .nav-link.active {
+    color: oklch(var(--forest));
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 1px;
+  }
+}
